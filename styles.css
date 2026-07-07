@@ -7,3 +7,8 @@ h1 {
     color: steelblue;
 }
 
+button {
+    padding: 10px;
+    margin-right: 10px;
+}
+
