@@ -1,1 +1,1 @@
-console.log("AEOE Planner Loaded");
+console.log("XXXX Planner Loaded");
