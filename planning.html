@@ -1,58 +1,55 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>XXXX Planner - Planning</title>
+    <title>Planner</title>
 
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
 
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
 
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
-
+    https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz.css">
 </head>
 
 <body>
-    <h1>Planning</h1>
-    <div id="myGrid"
+
+<h1>Planning</h1>
+
+<div id="myGrid"
      class="ag-theme-quartz"
-     style="height:500px;">
+     style="height:500px;width:100%;">
 </div>
-    <script>
 
-        const columnDefs = [
-            { field: "project" },
-            { field: "resource" },
-            { field: "jan", editable: true },
-            { field: "feb", editable: true },
-            { field: "mar", editable: true }
-        ];
+<script>
 
-        const rowData = [
-            { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40 },
-            { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 }
-        ];
+const columnDefs = [
+    { field: "project" },
+    { field: "resource" },
+    { field: "jan", editable: true },
+    { field: "feb", editable: true },
+    { field: "mar", editable: true }
+];
 
-        const gridOptions = {
-            columnDefs,
-            rowData
-        };
+const rowData = [
+    { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40 },
+    { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 }
+];
 
-        
+const gridOptions = {
+    columnDefs,
+    rowData
+};
 
 console.log("agGrid =", agGrid);
-alert("Reached AG Grid code");
-
 
 agGrid.createGrid(
-    document.querySelector("#myGrid"),
+    document.getElementById("myGrid"),
     gridOptions
 );
 
-
-    </script>
+</script>
 
 </body>
-
 </html>
+
