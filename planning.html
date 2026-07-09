@@ -6,14 +6,16 @@
     <title>XXXX Planner - Planning</title>
 
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
-</head>
+
 
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
 
+
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm">
 
+</head>
 
 <body>
     <h1>Planning</h1>
@@ -41,10 +43,14 @@
             rowData
         };
 
-        agGrid.createGrid(
-            document.querySelector("#myGrid"),
-            gridOptions
-        );
+        
+console.log("agGrid =", agGrid);
+
+agGrid.createGrid(
+    document.querySelector("#myGrid"),
+    gridOptions
+);
+
 
     </script>
 
