@@ -30,7 +30,11 @@
 const columnDefs = [
     { field: "project", pinned: "left"},
     { field: "resource",pinned: "left"},
-    { field: "unitType",pinned: "left", editable: true },
+    { field: "unitType",pinned: "left", editable: true,
+    cellEditor: "agSelectCellEditor",
+    cellEditorParams: {
+        values: ["Hours", "FTE", "Dollars"]
+     },
     { headerName: "Q1",
         children: [
     { field: "jan", editable: true },
