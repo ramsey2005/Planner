@@ -28,11 +28,11 @@
 <script>
 
 const columnDefs = [
-    { field: "program Owner or SOW Category", pinned: "left", width:100, wrapText: true, autoHeight: true},
+    { field: "program Owner or SOW Category", headerName: "Program Owner or SOW Category",pinned: "left", width:100, wrapHeaderText: true, autoHeight: true},
     {field: "SOW", pinned: "left", width:100},
     { field: "projectID", pinned: "left", width:100},
     { field: "taskID", pinned: "left", width:100},
-    { field: "product Line",pinned: "left", width:100, wrapText: true, autoHeight: true},
+    { field: "productLine",headerName: "Product Line", pinned: "left", width:100, wrapHeaderText: true, autoHeight: true},
     { field: "unitType",pinned: "left", width:100, editable: true,
     cellEditor: "agSelectCellEditor",
     cellEditorParams: {
