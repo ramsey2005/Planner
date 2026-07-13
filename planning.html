@@ -28,21 +28,28 @@
 <script>
 
 const columnDefs = [
-    { field: "project" },
-    { field: "resource" },
+    { field: "project", pinned: "left"},
+    { field: "resource",pinned: "left"},
+    { headerName: "Q1",
+        children: [
     { field: "jan", editable: true },
     { field: "feb", editable: true },
-    { field: "mar", editable: true },
+    { field: "mar", editable: true },]},
+{ headerName: "Q2",
+        children: [
     { field: "apr", editable: true },
     { field: "may", editable: true },
-    { field: "jun", editable: true },
+    { field: "jun", editable: true },]},
+{ headerName: "Q3",
+        children: [
     { field: "jul", editable: true },
     { field: "aug", editable: true },
-    { field: "sept", editable: true },
+    { field: "sept", editable: true },]},
+{ headerName: "Q4",
+        children: [
     { field: "oct", editable: true },
     { field: "nov", editable: true },
-    { field: "dec", editable: true },
-
+    { field: "dec", editable: true },]}
 ];
 
 
