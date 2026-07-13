@@ -37,8 +37,8 @@ const columnDefs = [
 
 
 const rowData = [
-    { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40 },
-    { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 }
+    { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40, apr: 27,may: 89, jun: 78, jul: 77, aug: 75, sept: 80, oct: 82, nov:83, dec:84},
+    { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80, apr: 27,may: 89, jun: 78, jul: 77, aug: 75, sept: 80, oct: 82, nov:83, dec:84}
 
 
 ];
@@ -48,7 +48,16 @@ const totalRow = {
     resource: "",
     jan: rowData.reduce((sum, row) => sum + row.jan, 0),
     feb: rowData.reduce((sum, row) => sum + row.feb, 0),
-    mar: rowData.reduce((sum, row) => sum + row.mar, 0)
+    mar: rowData.reduce((sum, row) => sum + row.mar, 0),
+    apr: rowData.reduce((sum, row) => sum + row.mar, 0),
+    may: rowData.reduce((sum, row) => sum + row.mar, 0),
+    jun: rowData.reduce((sum, row) => sum + row.mar, 0),
+    jul: rowData.reduce((sum, row) => sum + row.mar, 0),
+    aug: rowData.reduce((sum, row) => sum + row.mar, 0),
+    sept: rowData.reduce((sum, row) => sum + row.mar, 0),
+    oct: rowData.reduce((sum, row) => sum + row.mar, 0),
+    nov: rowData.reduce((sum, row) => sum + row.mar, 0),
+    dec: rowData.reduce((sum, row) => sum + row.mar, 0)
 };
 
 const gridOptions = {
