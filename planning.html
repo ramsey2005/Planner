@@ -30,7 +30,7 @@
 const columnDefs = [
     { field: "project", pinned: "left"},
     { field: "resource",pinned: "left"},
-    { field: "unitType",pinned: "left", width:100, editable: true,
+    { field: "unitType",pinned: "left", editable: true,
     cellEditor: "agSelectCellEditor",
     cellEditorParams: {
         values: ["Hours", "FTE", "Dollars"]
@@ -86,7 +86,8 @@ const gridOptions = {
     columnDefs,
     rowData,
     pinnedTopRowData: [totalRow],
-    theme: "legacy"
+    theme: "legacy",
+    defaultColDef: { width: 75, resizable: true}
 };
 
 console.log("agGrid =", agGrid);
