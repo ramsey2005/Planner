@@ -51,7 +51,7 @@ const totalRow = {
     mar: rowData.reduce((sum, row) => sum + row.mar, 0)
 };
 
-rowData.push(totalRow);
+rowData.unshift(totalRow);
 
 
 const gridOptions = {
