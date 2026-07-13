@@ -35,10 +35,27 @@ const columnDefs = [
     { field: "mar", editable: true }
 ];
 
+
 const rowData = [
     { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40 },
-    { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 }
+    { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 },
+
+
 ];
+
+const totalRow = {
+    project: "TOTAL",
+    resource: "",
+    jan: rowData.reduce((sum, row) => sum + row.jan, 0),
+    feb: rowData.reduce((sum, row) => sum + row.feb, 0),
+    mar: rowData.reduce((sum, row) => sum + row.mar, 0)
+};
+
+rowData.push(totalRow);
+
+
+];
+
 
 const gridOptions = {
     columnDefs,
