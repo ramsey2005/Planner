@@ -4,16 +4,12 @@
 <head>
     <title>Planner</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    -community/dist/ag-grid-community.min.js"></script>
 
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
 
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
-
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz.css">
-
-
+    ://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-quartz.css">
 </head>
 
 <body>
@@ -35,12 +31,9 @@ const columnDefs = [
     { field: "mar", editable: true }
 ];
 
-
 const rowData = [
     { project: "P100", resource: "Bob", jan: 80, feb: 80, mar: 40 },
     { project: "P200", resource: "Jane", jan: 40, feb: 60, mar: 80 }
-
-
 ];
 
 const totalRow = {
@@ -70,4 +63,5 @@ agGrid.createGrid(
 
 </body>
 </html>
+
 
