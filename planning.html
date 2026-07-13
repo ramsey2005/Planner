@@ -51,12 +51,10 @@ const totalRow = {
     mar: rowData.reduce((sum, row) => sum + row.mar, 0)
 };
 
-rowData.unshift(totalRow);
-
-
 const gridOptions = {
     columnDefs,
     rowData,
+    pinnedTopRowData: [totalRow],
     theme: "legacy"
 };
 
