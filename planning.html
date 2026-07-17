@@ -71,12 +71,6 @@ const rowData = [
 
 function calculateTotalRow() 
 
-function updateTotals(gridApi) {
-    gridApi.setGridOption(
-        "pinnedTopRowData",
-        [calculateTotalRow()]
-    );
-}
 {
     return {
         projectID: "TOTAL",
@@ -97,7 +91,12 @@ function updateTotals(gridApi) {
     };
 }
 
-
+function updateTotals(gridApi) {
+    gridApi.setGridOption(
+        "pinnedTopRowData",
+        [calculateTotalRow()]
+    );
+}
 const gridOptions = {
     columnDefs,
     rowData,
