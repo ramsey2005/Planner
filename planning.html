@@ -98,6 +98,28 @@ function updateTotals(gridApi) {
 
 const totalRow = calculateTotalRow();
 
+function formatValues(params) {
+    const value = Number(params.value);
+
+    if (isNaN(value)) {
+        return "";
+    }
+
+    if (params.data?.unitType === "Dollars") {
+        return value.toLocaleString();
+    }
+
+    if (params.data?.unitType === "FTE") {
+        return value.toFixed(2);
+    }
+
+    if (params.data?.unitType === "Hours") {
+        return value.toFixed(2);
+    }
+
+    return value;
+}
+
 const gridOptions = {
     columnDefs,
     rowData,
