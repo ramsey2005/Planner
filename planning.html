@@ -40,24 +40,24 @@ const columnDefs = [
      }},
     { headerName: "Q1",
         children: [
-    { field: "jan", editable: true },
-    { field: "feb", editable: true },
-    { field: "mar", editable: true },]},
+    { field: "jan", editable: true, valueFormatter: formatValues },
+    { field: "feb", editable: true, valueFormatter: formatValues},
+    { field: "mar", editable: true, valueFormatter: formatValues },]},
 { headerName: "Q2",
         children: [
-    { field: "apr", editable: true },
-    { field: "may", editable: true },
-    { field: "jun", editable: true },]},
+    { field: "apr", editable: true, valueFormatter: formatValues },
+    { field: "may", editable: true, valueFormatter: formatValues },
+    { field: "jun", editable: true, valueFormatter: formatValues },]},
 { headerName: "Q3",
         children: [
-    { field: "jul", editable: true },
-    { field: "aug", editable: true },
-    { field: "sept", editable: true },]},
+    { field: "jul", editable: true, valueFormatter: formatValues },
+    { field: "aug", editable: true, valueFormatter: formatValues },
+    { field: "sept", editable: true, valueFormatter: formatValues },]},
 { headerName: "Q4",
         children: [
-    { field: "oct", editable: true },
-    { field: "nov", editable: true },
-    { field: "dec", editable: true },]}
+    { field: "oct", editable: true, valueFormatter: formatValues },
+    { field: "nov", editable: true, valueFormatter: formatValues },
+    { field: "dec", editable: true, valueFormatter: formatValues },]}
 ];
 
 
