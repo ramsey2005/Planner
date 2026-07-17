@@ -120,6 +120,24 @@ function formatValues(params) {
     return value;
 }
 
+function saveData() {
+    localStorage.setItem(
+        "plannerData",
+        JSON.stringify(rowData)
+    );
+}
+
+function loadData() {
+    const savedData = localStorage.getItem("plannerData");
+
+    if (savedData) {
+        const parsedData = JSON.parse(savedData);
+
+        rowData.length = 0;
+        rowData.push(...parsedData);
+    }
+}
+
 const gridOptions = {
     columnDefs,
     rowData,
