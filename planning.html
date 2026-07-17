@@ -68,11 +68,11 @@ const rowData = [
 
 ];
 
-function calculateTotalRow() 
 
-{return {
-    projectID: "TOTAL",
-    programOwnerorSOWCategory: "",
+function calculateTotalRow() {
+    return {
+        projectID: "TOTAL",
+        programOwnerorSOWCategory: "",
 
         jan: rowData.reduce((sum, row) => sum + (row.jan || 0), 0),
         feb: rowData.reduce((sum, row) => sum + (row.feb || 0), 0),
@@ -88,24 +88,32 @@ function calculateTotalRow()
         dec: rowData.reduce((sum, row) => sum + (row.dec || 0), 0)
     };
 }
-function updateTotals(gridApi) 
-{gridApi.setGridOption(
-    "pinnedTopRowData",
-    [calculateTotalRow()]
-);
+
+function updateTotals(gridApi) {
+    gridApi.setGridOption(
+        "pinnedTopRowData",
+        [calculateTotalRow()]
+    );
 }
+
+const totalRow = calculateTotalRow();
 
 const gridOptions = {
     columnDefs,
     rowData,
     pinnedTopRowData: [totalRow],
     theme: "legacy",
-    defaultColDef: { width: 75, resizable: true}
-};
 
-onCellValueChanged: params => {
+    defaultColDef: {
+        width: 75,
+        resizable: true
+    },
+
+    onCellValueChanged: params => {
         updateTotals(params.api);
     }
+};
+
 
 console.log("agGrid =", agGrid);
 
