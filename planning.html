@@ -71,10 +71,7 @@ const rowData = [
 
 function calculateTotalRow() 
 
-{
-    return {
-        projectID: "TOTAL",
-        programOwnerorSOWCategory: "",
+{return {projectID: "TOTAL",programOwnerorSOWCategory: "",
 
         jan: rowData.reduce((sum, row) => sum + (row.jan || 0), 0),
         feb: rowData.reduce((sum, row) => sum + (row.feb || 0), 0),
@@ -90,13 +87,9 @@ function calculateTotalRow()
         dec: rowData.reduce((sum, row) => sum + (row.dec || 0), 0)
     };
 }
+function updateTotals(gridApi) 
+{gridApi.setGridOption("pinnedTopRowData",[calculateTotalRow()]);}
 
-function updateTotals(gridApi) {
-    gridApi.setGridOption(
-        "pinnedTopRowData",
-        [calculateTotalRow()]
-    );
-}
 const gridOptions = {
     columnDefs,
     rowData,
