@@ -68,22 +68,35 @@ const rowData = [
 
 ];
 
-const totalRow = {
-    project: "TOTAL",
-    resource: "",
-    jan: rowData.reduce((sum, row) => sum + row.jan, 0),
-    feb: rowData.reduce((sum, row) => sum + row.feb, 0),
-    mar: rowData.reduce((sum, row) => sum + row.mar, 0),
-    apr: rowData.reduce((sum, row) => sum + row.mar, 0),
-    may: rowData.reduce((sum, row) => sum + row.mar, 0),
-    jun: rowData.reduce((sum, row) => sum + row.mar, 0),
-    jul: rowData.reduce((sum, row) => sum + row.mar, 0),
-    aug: rowData.reduce((sum, row) => sum + row.mar, 0),
-    sept: rowData.reduce((sum, row) => sum + row.mar, 0),
-    oct: rowData.reduce((sum, row) => sum + row.mar, 0),
-    nov: rowData.reduce((sum, row) => sum + row.mar, 0),
-    dec: rowData.reduce((sum, row) => sum + row.mar, 0)
-};
+
+function calculateTotalRow() 
+
+function updateTotals(gridApi) {
+    gridApi.setGridOption(
+        "pinnedTopRowData",
+        [calculateTotalRow()]
+    );
+}
+{
+    return {
+        projectID: "TOTAL",
+        programOwnerorSOWCategory: "",
+
+        jan: rowData.reduce((sum, row) => sum + (row.jan || 0), 0),
+        feb: rowData.reduce((sum, row) => sum + (row.feb || 0), 0),
+        mar: rowData.reduce((sum, row) => sum + (row.mar || 0), 0),
+        apr: rowData.reduce((sum, row) => sum + (row.apr || 0), 0),
+        may: rowData.reduce((sum, row) => sum + (row.may || 0), 0),
+        jun: rowData.reduce((sum, row) => sum + (row.jun || 0), 0),
+        jul: rowData.reduce((sum, row) => sum + (row.jul || 0), 0),
+        aug: rowData.reduce((sum, row) => sum + (row.aug || 0), 0),
+        sept: rowData.reduce((sum, row) => sum + (row.sept || 0), 0),
+        oct: rowData.reduce((sum, row) => sum + (row.oct || 0), 0),
+        nov: rowData.reduce((sum, row) => sum + (row.nov || 0), 0),
+        dec: rowData.reduce((sum, row) => sum + (row.dec || 0), 0)
+    };
+}
+
 
 const gridOptions = {
     columnDefs,
@@ -92,6 +105,10 @@ const gridOptions = {
     theme: "legacy",
     defaultColDef: { width: 75, resizable: true}
 };
+
+onCellValueChanged: params => {
+        updateTotals(params.api);
+    }
 
 console.log("agGrid =", agGrid);
 
