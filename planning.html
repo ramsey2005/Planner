@@ -27,6 +27,16 @@
 
 <script>
 
+async function loadRates() {
+    const response = await fetch("rates.json");
+    const rates = await response.json();
+
+    console.log("Rates loaded:", rates);
+
+    return rates;
+}
+
+
 const columnDefs = [
     { field: "programOwnerorSOWCategory", headerName: "Program Owner or SOW Category",pinned: "left", width:160, wrapHeaderText: true, autoHeight: true},
     {field: "SOW", pinned: "left", width:100},
@@ -159,10 +169,13 @@ const gridOptions = {
 
 console.log("agGrid =", agGrid);
 
+loadRates();
 agGrid.createGrid(
     document.getElementById("myGrid"),
     gridOptions
 );
+
+
 
 </script>
 
